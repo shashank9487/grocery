@@ -386,7 +386,7 @@
               <?php } ?>
             </div>
             <div class="button-group">
-              <button type="button" id="cart_button<?php echo $product['product_id']; ?>" onclick="cart.add('<?php echo $product['product_id']; ?>');cart.check('<?php echo $product['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i></button>
+              <button type="button" id="cart_button<?php echo $product['product_id']; ?>" onclick="cart.add('<?php echo $product['product_id']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
@@ -486,33 +486,6 @@ $('#button-cart').on('click', function() {
       }
 		}
 	});
-  /*check product in cart*/
-  // var product_id=$("#product input[type='hidden']").val();
-  // document.getElementById("button-cart").disabled =true;
-  // $.ajax({
-  //     url: 'index.php?route=common/cart/products',
-  //     type: 'get',
-  //     dataType: 'json',
-  //     success: function(data) {
-  //       console.log(product_id);
-  //       console.log(data);
-  //       for (var i = 0; i < data['cart_products'].length; i++) {
-  //         if (product_id == data['cart_products'][i]) {
-  //           console.log("disabled");
-  //           // document.getElementById("button-cart").disabled =true;
-  //           console.log(document.getElementById("button-cart").disabled);
-  //           // $("#button-cart").removeClass("btn-primary").css("color", "#000000");
-  //           console.log('yes');
-  //           console.log(document.getElementById("button-cart").disabled);
-  //         } else {
-  //           console.log('no');
-  //         }
-  //       };
-  //     },
-  //     error: function(jqXHR, textStatus, errorThrown) {
-  //       alert(textStatus);
-  //     }
-  //   });
 });
 //--></script> 
 <script type="text/javascript"><!--
