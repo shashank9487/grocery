@@ -1,6 +1,5 @@
 <span id="tab"><h3><?php echo $heading_title; ?></h3></span>
 <div class="row">
-  <?php print_r($products); ?>
   <?php foreach ($products as $product) { ?>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="product-thumb transition">
