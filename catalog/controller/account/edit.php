@@ -64,8 +64,8 @@ class ControllerAccountEdit extends Controller {
 		$data['entry_firstname'] = $this->language->get('entry_firstname');
 		$data['entry_lastname'] = $this->language->get('entry_lastname');
 		$data['entry_email'] = $this->language->get('entry_email');
-		$data['entry_telephone'] = $this->language->get('entry_telephone');
-		$data['entry_fax'] = $this->language->get('entry_fax');
+		// $data['entry_telephone'] = $this->language->get('entry_telephone');
+		// $data['entry_fax'] = $this->language->get('entry_fax');
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_back'] = $this->language->get('button_back');
@@ -95,11 +95,11 @@ class ControllerAccountEdit extends Controller {
 			$data['error_email'] = '';
 		}
 
-		if (isset($this->error['telephone'])) {
-			$data['error_telephone'] = $this->error['telephone'];
-		} else {
-			$data['error_telephone'] = '';
-		}
+		// if (isset($this->error['telephone'])) {
+		// 	$data['error_telephone'] = $this->error['telephone'];
+		// } else {
+		// 	$data['error_telephone'] = '';
+		// }
 
 		if (isset($this->error['custom_field'])) {
 			$data['error_custom_field'] = $this->error['custom_field'];
@@ -137,21 +137,21 @@ class ControllerAccountEdit extends Controller {
 			$data['email'] = '';
 		}
 
-		if (isset($this->request->post['telephone'])) {
-			$data['telephone'] = $this->request->post['telephone'];
-		} elseif (!empty($customer_info)) {
-			$data['telephone'] = $customer_info['telephone'];
-		} else {
-			$data['telephone'] = '';
-		}
+		// if (isset($this->request->post['telephone'])) {
+		// 	$data['telephone'] = $this->request->post['telephone'];
+		// } elseif (!empty($customer_info)) {
+		// 	$data['telephone'] = $customer_info['telephone'];
+		// } else {
+		// 	$data['telephone'] = '';
+		// }
 
-		if (isset($this->request->post['fax'])) {
-			$data['fax'] = $this->request->post['fax'];
-		} elseif (!empty($customer_info)) {
-			$data['fax'] = $customer_info['fax'];
-		} else {
-			$data['fax'] = '';
-		}
+		// if (isset($this->request->post['fax'])) {
+		// 	$data['fax'] = $this->request->post['fax'];
+		// } elseif (!empty($customer_info)) {
+		// 	$data['fax'] = $customer_info['fax'];
+		// } else {
+		// 	$data['fax'] = '';
+		// }
 
 		// Custom Fields
 		$this->load->model('account/custom_field');
@@ -199,9 +199,9 @@ class ControllerAccountEdit extends Controller {
 			$this->error['warning'] = $this->language->get('error_exists');
 		}
 
-		if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
-			$this->error['telephone'] = $this->language->get('error_telephone');
-		}
+		// if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
+		// 	$this->error['telephone'] = $this->language->get('error_telephone');
+		// }
 
 		// Custom field validation
 		$this->load->model('account/custom_field');
