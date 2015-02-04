@@ -92,9 +92,17 @@
 
       <!-- Apply voucher or coupon code if agreed by harendra/nikhil -->
 
-      <div class="text-right">
-      
-        <h3>Estimated Total is: <span><?php echo $net_total; ?></span></h3>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-8">
+          <table class="table table-bordered">
+            <?php foreach ($totals as $total) { ?>
+            <tr>
+              <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
+              <td class="text-right"><?php echo $total['text']; ?></td>
+            </tr>
+            <?php } ?>
+          </table>
+        </div>
       </div>
       <div class="buttons pull-right">
         <div class="pull-left" style="padding-right: 10px"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
