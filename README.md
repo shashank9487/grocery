@@ -9,3 +9,4 @@ View -> Templates
 [Transaction modules]
 
 set paytm gateways
+set billdesk gateway
