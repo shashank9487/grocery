@@ -7,3 +7,5 @@ Models
 View -> Templates
 
 [Transaction modules]
+
+set paytm gateway
