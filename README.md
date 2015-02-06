@@ -9,5 +9,5 @@ View -> Templates
 [Transaction modules]
 
 set paytm gateways
-set billdesk gateway
-set ccavenue gateway
+set billdesk gateways
+set ccavenue gateways
