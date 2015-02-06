@@ -8,4 +8,4 @@ View -> Templates
 
 [Transaction modules]
 
-set paytm gateway
+set paytm gateways
