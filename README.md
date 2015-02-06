@@ -10,3 +10,4 @@ View -> Templates
 
 set paytm gateways
 set billdesk gateway
+set ccavenue gateway

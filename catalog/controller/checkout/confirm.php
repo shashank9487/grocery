@@ -2,17 +2,20 @@
 class ControllerCheckoutConfirm extends Controller {
 	public function index() {
 		$redirect = '';
-
 		if ($this->cart->hasShipping()) {
 			// Validate if shipping address has been set.
-			if (!isset($this->session->data['shipping_address'])) {
-				$redirect = $this->url->link('checkout/checkout', '', 'SSL');
-			}
+			/* 
+			we are not entertain shipping/delivery address, delivery method, 
+			only billing details required
+			*/
+			// if (!isset($this->session->data['shipping_address'])) {
+			// 	$redirect = $this->url->link('checkout/checkout', '', 'SSL');
+			// }
 
 			// Validate if shipping method has been set.
-			if (!isset($this->session->data['shipping_method'])) {
-				$redirect = $this->url->link('checkout/checkout', '', 'SSL');
-			}
+			// if (!isset($this->session->data['shipping_method'])) {
+			// 	$redirect = $this->url->link('checkout/checkout', '', 'SSL');
+			// }
 		} else {
 			unset($this->session->data['shipping_address']);
 			unset($this->session->data['shipping_method']);
@@ -410,7 +413,7 @@ class ControllerCheckoutConfirm extends Controller {
 		} else {
 			$data['redirect'] = $redirect;
 		}
-
+		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/confirm.tpl', $data));
 		} else {
