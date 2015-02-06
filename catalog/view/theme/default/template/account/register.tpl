@@ -70,6 +70,16 @@
             </div>
           </div>
           
+          <div class="form-group required">
+            <label class="col-sm-4 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
+            <div class="col-sm-6">
+              <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+              <?php if ($error_telephone) { ?>
+              <div class="text-danger"><?php echo $error_telephone; ?></div>
+              <?php } ?>
+            </div>
+          </div>
+          
           <?php foreach ($custom_fields as $custom_field) { ?>
           <?php if ($custom_field['location'] == 'account') { ?>
           <?php if ($custom_field['type'] == 'select') { ?>
