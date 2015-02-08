@@ -12,7 +12,7 @@ class ControllerCheckoutConfirm extends Controller {
 			// 	$redirect = $this->url->link('checkout/checkout', '', 'SSL');
 			// }
 
-			// Validate if shipping method has been set.
+			// // Validate if shipping method has been set.
 			// if (!isset($this->session->data['shipping_method'])) {
 			// 	$redirect = $this->url->link('checkout/checkout', '', 'SSL');
 			// }
@@ -152,50 +152,50 @@ class ControllerCheckoutConfirm extends Controller {
 			} else {
 				$order_data['payment_code'] = '';
 			}
+			
+			// if ($this->cart->hasShipping()) {
+			// 	$order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname'];
+			// 	$order_data['shipping_lastname'] = $this->session->data['shipping_address']['lastname'];
+			// 	$order_data['shipping_company'] = $this->session->data['shipping_address']['company'];
+			// 	$order_data['shipping_address_1'] = $this->session->data['shipping_address']['address_1'];
+			// 	$order_data['shipping_address_2'] = $this->session->data['shipping_address']['address_2'];
+			// 	$order_data['shipping_city'] = $this->session->data['shipping_address']['city'];
+			// 	$order_data['shipping_postcode'] = $this->session->data['shipping_address']['postcode'];
+			// 	$order_data['shipping_zone'] = $this->session->data['shipping_address']['zone'];
+			// 	$order_data['shipping_zone_id'] = $this->session->data['shipping_address']['zone_id'];
+			// 	$order_data['shipping_country'] = $this->session->data['shipping_address']['country'];
+			// 	$order_data['shipping_country_id'] = $this->session->data['shipping_address']['country_id'];
+			// 	$order_data['shipping_address_format'] = $this->session->data['shipping_address']['address_format'];
+			// 	$order_data['shipping_custom_field'] = (isset($this->session->data['shipping_address']['custom_field']) ? $this->session->data['shipping_address']['custom_field'] : array());
 
-			if ($this->cart->hasShipping()) {
-				$order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname'];
-				$order_data['shipping_lastname'] = $this->session->data['shipping_address']['lastname'];
-				$order_data['shipping_company'] = $this->session->data['shipping_address']['company'];
-				$order_data['shipping_address_1'] = $this->session->data['shipping_address']['address_1'];
-				$order_data['shipping_address_2'] = $this->session->data['shipping_address']['address_2'];
-				$order_data['shipping_city'] = $this->session->data['shipping_address']['city'];
-				$order_data['shipping_postcode'] = $this->session->data['shipping_address']['postcode'];
-				$order_data['shipping_zone'] = $this->session->data['shipping_address']['zone'];
-				$order_data['shipping_zone_id'] = $this->session->data['shipping_address']['zone_id'];
-				$order_data['shipping_country'] = $this->session->data['shipping_address']['country'];
-				$order_data['shipping_country_id'] = $this->session->data['shipping_address']['country_id'];
-				$order_data['shipping_address_format'] = $this->session->data['shipping_address']['address_format'];
-				$order_data['shipping_custom_field'] = (isset($this->session->data['shipping_address']['custom_field']) ? $this->session->data['shipping_address']['custom_field'] : array());
+			// 	if (isset($this->session->data['shipping_method']['title'])) {
+			// 		$order_data['shipping_method'] = $this->session->data['shipping_method']['title'];
+			// 	} else {
+			// 		$order_data['shipping_method'] = '';
+			// 	}
 
-				if (isset($this->session->data['shipping_method']['title'])) {
-					$order_data['shipping_method'] = $this->session->data['shipping_method']['title'];
-				} else {
-					$order_data['shipping_method'] = '';
-				}
-
-				if (isset($this->session->data['shipping_method']['code'])) {
-					$order_data['shipping_code'] = $this->session->data['shipping_method']['code'];
-				} else {
-					$order_data['shipping_code'] = '';
-				}
-			} else {
-				$order_data['shipping_firstname'] = '';
-				$order_data['shipping_lastname'] = '';
-				$order_data['shipping_company'] = '';
-				$order_data['shipping_address_1'] = '';
-				$order_data['shipping_address_2'] = '';
-				$order_data['shipping_city'] = '';
-				$order_data['shipping_postcode'] = '';
-				$order_data['shipping_zone'] = '';
-				$order_data['shipping_zone_id'] = '';
-				$order_data['shipping_country'] = '';
-				$order_data['shipping_country_id'] = '';
-				$order_data['shipping_address_format'] = '';
-				$order_data['shipping_custom_field'] = array();
-				$order_data['shipping_method'] = '';
-				$order_data['shipping_code'] = '';
-			}
+			// 	if (isset($this->session->data['shipping_method']['code'])) {
+			// 		$order_data['shipping_code'] = $this->session->data['shipping_method']['code'];
+			// 	} else {
+			// 		$order_data['shipping_code'] = '';
+			// 	}
+			// } else {
+			// 	$order_data['shipping_firstname'] = '';
+			// 	$order_data['shipping_lastname'] = '';
+			// 	$order_data['shipping_company'] = '';
+			// 	$order_data['shipping_address_1'] = '';
+			// 	$order_data['shipping_address_2'] = '';
+			// 	$order_data['shipping_city'] = '';
+			// 	$order_data['shipping_postcode'] = '';
+			// 	$order_data['shipping_zone'] = '';
+			// 	$order_data['shipping_zone_id'] = '';
+			// 	$order_data['shipping_country'] = '';
+			// 	$order_data['shipping_country_id'] = '';
+			// 	$order_data['shipping_address_format'] = '';
+			// 	$order_data['shipping_custom_field'] = array();
+			// 	$order_data['shipping_method'] = '';
+			// 	$order_data['shipping_code'] = '';
+			// }
 
 			$order_data['products'] = array();
 
